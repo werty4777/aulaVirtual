@@ -1,0 +1,551 @@
+<form [formGroup]="dataGroup" >
+
+  <table [dataSource]="data"  formArrayName="students" class="mat-elevation-z8" mat-table>
+    <!-- Implicit Column -->
+    <ng-container matColumnDef="Alumno">
+      <th *matHeaderCellDef mat-header-cell class="alumnos"> Alumnos</th>
+      <td *matCellDef="let data" mat-cell> {{data.alumno}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="1er">
+      <th *matHeaderCellDef mat-header-cell class="th">
+
+        <div class="titulos">
+
+          <div class="bimestre">
+
+            <span>1er Bimestre</span>
+
+          </div>
+          <div class="meses">
+
+            <span>MARZO</span>
+            <span>ABRIL</span>
+            <span>MAYO</span>
+
+          </div>
+
+
+        </div>
+
+
+
+      </th>
+      <td *matCellDef="let data let rowindex=index" [formGroupName]="rowindex"   mat-cell>
+
+
+        <table formArrayName="primerbimestre" >
+
+
+          <tr>
+
+            <td  >
+
+
+              <table>
+                <tr>
+                  <th>EM</th>
+                  <th>PM</th>
+                </tr>
+
+                <tr [formGroupName]="0">
+                  <td  formGroupName="em"  >
+
+
+
+
+                    <input type="text" formControlName="nota"
+                    >
+
+                  </td>
+                  <td formGroupName="pm">
+                    <input type="text"  formControlName="nota"
+                    >
+
+                  </td>
+
+                </tr>
+
+
+              </table>
+
+
+            </td>
+
+
+            <td>
+
+              <table>
+                <tr>
+                  <th>EM</th>
+                  <th>PM</th>
+                </tr>
+
+                <tr [formGroupName]="1">
+                  <td  formGroupName="em">
+
+
+                    <input type="text" formControlName="nota"
+                    >
+
+                  </td>
+                  <td formGroupName="pm">
+                    <input type="text" formControlName="nota"
+                    >
+                  </td>
+                </tr>
+
+
+              </table>
+
+
+            </td>
+
+
+            <td>
+
+              <table>
+                <tr>
+                  <th>EB</th>
+                  <th>PM</th>
+                </tr>
+
+                <tr [formGroupName]="2">
+                  <td formGroupName="em">
+
+                    <input type="text" formControlName="nota"
+                    >
+
+                  </td>
+                  <td formGroupName="pm">
+                    <input type="text" formControlName="nota"
+                    >
+                  </td>
+
+                </tr>
+
+
+              </table>
+
+
+            </td>
+
+
+          </tr>
+
+
+        </table>
+
+
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="2do">
+      <th *matHeaderCellDef mat-header-cell class="th">
+
+        <div class="titulos">
+
+          <div class="bimestre">
+
+            <span>2do Bimestre</span>
+
+          </div>
+          <div class="meses">
+
+            <span>MAYO</span>
+            <span>JUNIO</span>
+            <span>JULIO</span>
+
+          </div>
+
+
+        </div>
+
+
+
+      </th>
+      <td *matCellDef="let data let rowindex=index" [formGroupName]="rowindex"   mat-cell>
+        <table formArrayName="segundobimestre" >
+
+
+          <tr>
+
+            <td>
+
+
+              <table>
+                <tr>
+                  <th>EM</th>
+                  <th>PM</th>
+                </tr>
+
+                <tr  [formGroupName]="0">
+                  <td formGroupName="em">
+
+
+
+
+                    <input type="text" formControlName="nota"
+                    >
+
+                  </td>
+                  <td formGroupName="pm">
+                    <input type="text"  formControlName="nota"
+                    >
+
+                  </td>
+
+                </tr>
+
+
+              </table>
+
+
+            </td>
+
+
+            <td>
+
+              <table>
+                <tr>
+                  <th>EM</th>
+                  <th>PM</th>
+                </tr>
+
+                <tr  [formGroupName]="1">
+                  <td formGroupName="em">
+
+
+                    <input type="text" formControlName="nota"
+                    >
+
+                  </td>
+                  <td formGroupName="pm">
+                    <input type="text" formControlName="nota"
+                    >
+                  </td>
+
+                </tr>
+
+
+              </table>
+
+
+            </td>
+
+
+            <td>
+
+              <table>
+                <tr>
+                  <th>EB</th>
+                  <th>PM</th>
+                </tr>
+
+                <tr  [formGroupName]="2">
+                  <td formGroupName="em">
+
+                    <input type="text" formControlName="nota"
+                    >
+
+                  </td>
+                  <td formGroupName="pm">
+                    <input type="text" formControlName="nota"
+                    >
+                  </td>
+
+                </tr>
+
+
+              </table>
+
+
+            </td>
+
+
+          </tr>
+
+
+        </table>
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="3er">
+      <th *matHeaderCellDef mat-header-cell class="th">
+
+
+
+        <div class="titulos">
+
+          <div class="bimestre">
+
+            <span>3er Bimestre</span>
+
+          </div>
+          <div class="meses">
+
+            <span>AGOSTO</span>
+            <span>SETIEMBRE</span>
+            <span>OCTUBRE</span>
+
+          </div>
+
+
+        </div>
+
+
+      </th>
+      <td *matCellDef="let data let rowindex=index" [formGroupName]="rowindex"   mat-cell>
+
+        <table formArrayName="tercerbimestre" >
+
+
+          <tr>
+
+            <td>
+
+
+              <table>
+                <tr>
+                  <th>EM</th>
+                  <th>PM</th>
+                </tr>
+
+                <tr  [formGroupName]="0">
+                  <td formGroupName="em">
+
+
+                    <input type="text" formControlName="nota"
+                    >
+
+                  </td>
+                  <td formGroupName="pm">
+                    <input type="text" formControlName="nota"
+                    >
+
+                  </td>
+
+                </tr>
+
+
+              </table>
+
+
+            </td>
+
+
+            <td>
+
+              <table>
+                <tr>
+                  <th>EM</th>
+                  <th>PM</th>
+                </tr>
+
+                <tr  [formGroupName]="1">
+                  <td formGroupName="em">
+
+
+                    <input type="text" formControlName="nota"
+                    >
+
+                  </td>
+                  <td formGroupName="pm">
+                    <input type="text" formControlName="nota"
+                    >
+                  </td>
+
+                </tr>
+
+
+              </table>
+
+
+            </td>
+
+
+            <td>
+
+              <table>
+                <tr>
+                  <th>EB</th>
+                  <th>PM</th>
+                </tr>
+
+                <tr  [formGroupName]="2">
+                  <td formGroupName="em">
+
+                    <input type="text" formControlName="nota"
+                    >
+
+                  </td>
+                  <td formGroupName="pm">
+                    <input type="text" formControlName="nota"
+                    >
+                  </td>
+
+                </tr>
+
+
+              </table>
+
+
+            </td>
+
+
+          </tr>
+
+
+        </table>
+
+
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="4to">
+      <th *matHeaderCellDef mat-header-cell class="th">
+
+
+        <div class="titulos">
+
+          <div class="bimestre">
+
+            <span>4to Bimestre</span>
+
+          </div>
+          <div class="meses">
+
+            <span>OCTUBRE</span>
+            <span>NOVIEMBRE</span>
+            <span>DICIEMBRE</span>
+
+          </div>
+
+
+        </div>
+
+
+      </th>
+      <td *matCellDef="let data let rowindex=index" [formGroupName]="rowindex"   mat-cell>
+
+        <table formArrayName="cuartobimestre" >
+
+
+          <tr>
+
+            <td>
+
+
+              <table>
+                <tr>
+                  <th>EM</th>
+                  <th>PM</th>
+                </tr>
+
+                <tr  [formGroupName]="0">
+                  <td formGroupName="em">
+
+
+
+                  <input type="text" formControlName="nota"
+                  >
+
+                  </td>
+                  <td formGroupName="pm">
+                    <input type="text" formControlName="nota"
+                    >
+
+                  </td>
+
+                </tr>
+
+
+              </table>
+
+
+            </td>
+
+
+            <td>
+
+              <table>
+                <tr>
+                  <th>EM</th>
+                  <th>PM</th>
+                </tr>
+
+                <tr  [formGroupName]="1">
+                  <td formGroupName="em">
+
+
+                    <input type="text" formControlName="nota"
+                    >
+
+                  </td>
+                  <td formGroupName="pm">
+                    <input type="text" formControlName="nota"
+                    >
+                  </td>
+
+                </tr>
+
+
+              </table>
+
+
+            </td>
+
+
+            <td>
+
+              <table>
+                <tr>
+                  <th>EF</th>
+                  <th>PM</th>
+                </tr>
+
+                <tr  [formGroupName]="2">
+                  <td formGroupName="em">
+
+
+                  <input type="text" formControlName="nota">
+
+
+                  </td>
+                  <td formGroupName="pm">
+                    <input type="text" formControlName="nota"
+                         >
+                  </td>
+
+                </tr>
+
+
+              </table>
+
+
+            </td>
+
+
+          </tr>
+
+
+        </table>
+
+      </td>
+    </ng-container>
+
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+  </table>
+
+</form>
+
+<div class="boton">
+  <button (click)="verData()" mat-button class="botonsito">Guardar</button>
+</div>
+

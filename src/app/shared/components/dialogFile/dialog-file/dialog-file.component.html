@@ -1,0 +1,26 @@
+<mat-form-field>
+  <ngx-mat-file-input [color]="'red'" [formControl]="fileControl" [multiple]="false" (ngModelChange)="validate()">
+  </ngx-mat-file-input>
+
+</mat-form-field>
+
+
+
+
+<mat-form-field>
+
+  <mat-label>Nombre</mat-label>
+  <input #name matInput type="text">
+
+</mat-form-field>
+
+
+<mat-form-field>
+
+  <mat-label>Descripcion</mat-label>
+  <input #desc matInput type="text">
+
+</mat-form-field>
+<button (click)="subirArchivo(name.value,desc.value)"
+        [disabled]="this.fileControl.hasError('required') || this.fileControl.hasError('maxSize') " mat-button>Subir Archivo</button>
+

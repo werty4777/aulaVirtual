@@ -1,0 +1,161 @@
+
+
+
+.anuncios {
+  height: 85vh;
+  grid-area: anuncios;
+  overflow-y: scroll;
+  margin-left: -35px;
+}
+
+.data {
+
+  background: white;
+  grid-area: area;
+  display: inline-grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: 100%    ;
+  padding-top: 30px;
+}
+
+#content{
+  margin-top: 0 !important;
+  padding:  0px !important;
+
+}
+.navbar{
+  grid-area: nav;
+}
+
+.anuncios {
+  height: 85vh;
+
+  overflow-y: scroll;
+  margin-left: -35px;
+}
+
+
+.list-group {
+  max-height: 100%;
+
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.list-group-item {
+  display: flex;
+  flex-direction: column;
+
+
+
+  padding-top: 20px !important;
+  margin-bottom: 25px !important;
+
+}
+
+
+.contentcontent {
+  background-image: url("https://i.ytimg.com/vi/H8Jecscb4vU/maxresdefault.jpg");
+  background-size: 90% 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;
+  margin-top: 20px !important;
+
+}
+.headercontent{
+
+  padding-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: left;
+
+  margin: auto;
+  display: inline-grid;
+  grid-template-columns: 0 50%;
+  grid-template-rows: 100%;
+
+}
+
+
+.datacontent{
+  font-family: Verdana,Geneva,sans-serif;
+  font-size: 16px;
+
+}
+.titlecontentheader{
+  font-weight: bold;
+}
+
+.logocontent{
+  background-image: url("../../../assets/logo.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+
+
+.title{
+  height: 125px;
+
+  display: grid;
+  grid-template-rows: 50% 50%;
+}
+.navlogout{
+
+  display: inline-grid;
+  padding-left: 30px;
+  padding-right: 50px;
+  padding-top: 20px;
+  grid-template-columns: 0 100%;
+  grid-template-rows: 100%;
+
+
+  background: white !important;
+
+  border-bottom: solid 0.2px #e9e9e9;
+
+}
+#logoutitem{
+  color: black !important;
+  cursor: pointer;
+  opacity: 40%;
+  grid-column-end: logoutitem;
+}
+.dropdown-menu > a{
+  color: black !important;
+}
+
+.titlecontent{
+  background: #f8f8f8;
+  padding-left: 20px;
+  padding-top: 22px;
+  display: grid;
+  grid-template-columns: 1% 1%;
+  grid-column-gap: 10px;
+  grid-template-rows: 100%;
+  box-shadow: #1d1919 0 0.2px 0 0;
+  text-align: center;
+  align-content: center;
+
+
+
+}
+
+#home{
+  display: inline-grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+  grid-column-gap: 20px;
+}
+
+#homeitem{
+  color: black !important;
+}
+#title{
+  color: black;
+  padding-top: 2px;
+}

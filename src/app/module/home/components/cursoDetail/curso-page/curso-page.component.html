@@ -1,0 +1,87 @@
+<div class="curso">
+
+  <div class="header">
+
+      <mat-card>
+        <div class="title">
+        <div class="cursodescription">
+        <h2>{{this.data.curso}}</h2>
+
+        </div>
+        <div class="datosprofesor">
+
+          <div class="foto" style="background-image: url({{this.data.fotoProfesor}})"></div>
+          <div class="nombre">
+            <div class="iconteacher">
+              <mat-icon>account_circle</mat-icon>
+            </div>
+            <div class="subname">
+              <span>Profesor</span>
+
+            </div>
+            <div class="nameteacher">
+              <span>{{this.data.profesor}}</span>
+
+            </div>
+
+
+          </div>
+          <div class="turno">
+            <div class="iconteacher">
+              <mat-icon class="material-icons md-light md-inactive" >access_time_filled</mat-icon>
+            </div>
+            <div class="subname">
+              <span>Turno</span>
+
+            </div>
+            <div class="nameteacher">
+              <span>{{this.data.turno}}</span>
+
+            </div>
+
+          </div>
+
+
+
+        </div>
+        <div class="descripcion"><p>
+         {{this.data.textCurso}}
+        </p></div>
+
+    </div>
+        <div class="menu">
+
+          <mat-tab-group [color]="'warn'" (selectedTabChange)="changeRoute($event)">
+            <mat-tab label="Anuncios">
+
+            </mat-tab>
+            <mat-tab label="Recursos">
+
+            </mat-tab>
+            <mat-tab  label="Notas" >
+
+            </mat-tab>
+
+            <mat-tab  label="Asistencia" *ngIf="teacher=='true'" >
+
+            </mat-tab>
+          </mat-tab-group>
+
+        </div>
+        <div class="content">
+
+          <router-outlet></router-outlet>
+
+
+
+        </div>
+      </mat-card>
+
+
+
+
+
+  </div>
+
+
+</div>

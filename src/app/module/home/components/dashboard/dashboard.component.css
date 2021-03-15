@@ -1,0 +1,345 @@
+
+
+.contentwraper {
+  display: inline-grid;
+  width: 100%;
+  margin: 0 !important;
+  height: 85vh;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 20% max-content;
+  background: #f8f8f8 !important;
+  padding-left: 40px;
+  grid-area: con;
+  grid-template-areas:
+    "anuncios area"
+    "anuncion cursos";
+}
+.cursos{
+  grid-area: cursos;
+
+  padding-left: 20px;
+}
+
+.anuncios {
+  height: 85vh;
+  grid-area: anuncios;
+  overflow-y: scroll;
+  margin-left: -35px;
+}
+
+.data {
+
+  background: white;
+  grid-area: area;
+  display: inline-grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: 100%    ;
+  padding-top: 30px;
+}
+
+#content{
+  margin-top: 0 !important;
+  padding:  0px !important;
+}
+.navbar{
+  grid-area: nav;
+}
+
+.anuncios {
+  height: 85vh;
+
+  overflow-y: scroll;
+  margin-left: -35px;
+}
+
+
+.list-group {
+  max-height: 100%;
+
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.list-group-item {
+  display: flex;
+  flex-direction: column;
+
+
+
+  padding-top: 20px !important;
+  margin-bottom: 25px !important;
+
+}
+
+
+.contentcontent {
+  background-image: url("https://i.ytimg.com/vi/H8Jecscb4vU/maxresdefault.jpg");
+  background-size: 90% 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;
+  margin-top: 20px !important;
+
+}
+.headercontent{
+
+  padding-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: left;
+
+  margin: auto;
+  display: inline-grid;
+  grid-template-columns: 0 50%;
+  grid-template-rows: 100%;
+
+}
+
+
+.datacontent{
+  font-family: Verdana,Geneva,sans-serif;
+  font-size: 16px;
+
+}
+.titlecontentheader{
+  font-weight: bold;
+}
+
+.logocontent{
+  background-image: url("~src/assets/logo.png");
+
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+
+
+.title{
+  height: 125px;
+
+  display: grid;
+  grid-template-rows: 50% 50%;
+}
+.navlogout{
+
+  display: inline-grid;
+  padding-left: 30px;
+  padding-right: 50px;
+  padding-top: 20px;
+  grid-template-columns: 0 100%;
+  grid-template-rows: 100%;
+
+
+  background: white !important;
+
+  border-bottom: solid 0.2px #e9e9e9;
+
+}
+#logoutitem{
+  color: black !important;
+  cursor: pointer;
+  opacity: 40%;
+  grid-column-end: logoutitem;
+}
+.dropdown-menu > a{
+  color: black !important;
+}
+
+.titlecontent{
+  background: #f8f8f8;
+  padding-left: 20px;
+  padding-top: 22px;
+  display: grid;
+  grid-template-columns: 1% 1%;
+  grid-column-gap: 10px;
+  grid-template-rows: 100%;
+  box-shadow: #1d1919 0 0.2px 0 0;
+  text-align: center;
+  align-content: center;
+
+
+
+}
+
+#home{
+  display: inline-grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+  grid-column-gap: 20px;
+}
+
+#homeitem{
+  color: black !important;
+}
+#title{
+  color: black;
+  padding-top: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: green;
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0a3619;
+}
+.cards{
+  display: inline-grid;
+  width: 100%;
+  height: 100%;
+  background: white;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+}
+.cardwrap{
+  padding: 20px;
+  width: 320px;
+  height: 150px;
+  display: flex;
+  color: white !important;
+
+
+
+
+}
+
+.carditem{
+  display: grid;
+
+}
+.wrapcarditem{
+
+  width: 280px;
+  height: 160px;
+  margin: auto;
+}
+.wrapitemcard{
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background: #9ced8a;
+
+  box-shadow: #1d1919 0.2px 0.2px 0.2px 0.2px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "ii titulo"
+    "ii  nota";
+}
+.span{
+  width: 100% !important;
+}
+.wrapitemcard > .span {
+
+
+}
+.fa-clipboard-list,.fa-money-bill-alt{
+  grid-area: ii;
+  font-size: 50px;
+  padding-top: 10px;
+  padding-left: 20px;
+  color: green !important;
+
+}
+
+/*dasddasasd*/
+
+.card-counter{
+  box-shadow: 2px 2px 10px #DADADA;
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #fff;
+  height: 100px;
+  border-radius: 5px;
+  transition: .3s linear all;
+}
+
+.card-counter:hover{
+  box-shadow: 4px 4px 20px #DADADA;
+  transition: .3s linear all;
+}
+
+.card-counter.primary{
+  background-color: #007bff;
+  color: #FFF;
+}
+
+.card-counter.danger{
+  background-color: #ef5350;
+  color: #FFF;
+}
+
+.card-counter.success{
+  background-color: #66bb6a;
+  color: #FFF;
+}
+
+.card-counter.info{
+  background-color: #26c6da;
+  color: #FFF;
+}
+
+.card-counter i{
+  font-size: 5em;
+  opacity: 0.2;
+}
+
+.card-counter .count-numbers{
+  position: absolute;
+  right: 35px;
+  top: 20px;
+  font-size: 32px;
+  display: block;
+}
+
+.card-counter .count-name{
+  position: absolute;
+  right: 35px;
+  top: 65px;
+  color: white;
+  font-family: "Calibri Light";
+  /*font-weight: bold;*/
+  text-transform: capitalize;
+  opacity: 0.5;
+  display: block;
+  font-size: 18px;
+}
+.cursos{
+  margin-top: 40px;
+  background: white;
+}
+
+
+
+.itemcurso{
+
+  display: grid;
+  grid-template-columns: 40% 50%;
+  grid-template-rows: 100%;
+
+}
+mat-panel-title{
+
+  width: 100px;
+
+}
+.titlecursos{
+
+  margin-left: 10px;
+}

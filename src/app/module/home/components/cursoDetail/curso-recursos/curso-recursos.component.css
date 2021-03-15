@@ -1,0 +1,41 @@
+.wraprecursos{
+
+  margin-top: 5px;
+  display: grid;
+
+
+
+
+
+
+}
+
+.example-tree{
+
+  margin-left: 20px;
+
+}
+
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+.cardheader{
+
+
+  padding-top: 10px;
+  text-align: start;
+  align-items: start;
+  align-content: start;
+  font-family: Arial, serif;
+  margin-bottom: 20px;
+
+
+}
+

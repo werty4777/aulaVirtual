@@ -1,0 +1,184 @@
+<div class="wraprecursos"  >
+
+
+  <mat-card style="width: 100%">
+  <div class="cardheader" (contextmenu)="agregarSesiones($event,id)" (mousedown)="$event.stopPropagation()" (click)="$event.stopPropagation()" >
+    <mat-card>Sesiones<mat-icon >add</mat-icon></mat-card>
+  </div>
+
+
+
+
+    <mat-accordion>
+
+
+      <mat-expansion-panel *ngFor="let item of _listasesiones" (expandedChange)="togleable($event,item.idSesion)" (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false"
+                           >
+
+
+
+
+        <mat-expansion-panel-header class="panelexpansion" (contextmenu)="eliminarSesionn($event,item.idSesion,item.editable)">
+          <mat-panel-title >
+            <span>{{item.nombreSesion}}</span>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <mat-tree  #tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
+
+          <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+            <mat-list class="mat-tree-node">
+
+              <mat-list-item *ngIf="node.childs==null">
+                <button mat-icon-button disabled ></button>
+
+                <button  (contextmenu)="elimimarFile($event,node.id,node.editable)"   (click)="descargar(node.urlFile,node.filename)" mat-button> <mat-icon mat-list-icon>note</mat-icon>{{node.filename}}</button>
+
+              </mat-list-item>
+
+              <li style="margin-bottom: 15px;cursor: pointer" *ngIf="node.childs!=null" >
+                <div class="mat-tree-node"  (contextmenu)="folderEliminar($event,node.id,node.uploadable,node.editable)" matTreeNodeToggle
+                     [attr.aria-label]="'Toggle ' + node.nombreFile" >
+                  <button mat-icon-button >
+                    <mat-icon class="mat-icon-rtl-mirror">
+                      {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                    </mat-icon>
+                  </button>
+                  <mat-icon mat-list-icon>folder</mat-icon>  {{node.nombreFile}}
+
+                </div>
+                <ul [class.example-tree-invisible]="!treeControl.isExpanded(node)">
+                  <ng-container matTreeNodeOutlet></ng-container>
+                </ul>
+              </li>
+
+
+
+              <mat-divider></mat-divider>
+            </mat-list>
+
+          </mat-tree-node>
+
+
+          <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild" >
+            <li style="margin-bottom: 15px;cursor: pointer" >
+              <div class="mat-tree-node"  (contextmenu)="folderEliminar($event,node.id,node.uploadable,node.editable)" matTreeNodeToggle
+                   [attr.aria-label]="'Toggle ' + node.nombreFile" >
+                <button mat-icon-button >
+                  <mat-icon class="mat-icon-rtl-mirror">
+                    {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                  </mat-icon>
+                </button>
+                <mat-icon mat-list-icon>folder</mat-icon>  {{node.nombreFile}}
+
+              </div>
+              <ul [class.example-tree-invisible]="!treeControl.isExpanded(node)">
+                <ng-container matTreeNodeOutlet></ng-container>
+              </ul>
+            </li>
+          </mat-nested-tree-node>
+        </mat-tree>
+
+      </mat-expansion-panel>
+      <div style="visibility: hidden; position: fixed;"
+           [style.left]="menuTopLeftPosition.x"
+           [style.top]="menuTopLeftPosition.y"
+           [matMenuTriggerFor]="menu"></div>
+
+      <div style="visibility: hidden; position: fixed;"
+           [style.left]="menuTopLeftPosition.x"
+           [style.top]="menuTopLeftPosition.y"
+           [matMenuTriggerFor]="agregar"></div>
+
+
+
+      <div style="visibility: hidden; position: fixed;"
+           [style.left]="menuTopLeftPosition.x"
+           [style.top]="menuTopLeftPosition.y"
+           [matMenuTriggerFor]="folder"></div>
+
+      <div style="visibility: hidden; position: fixed;"
+           [style.left]="menuTopLeftPosition.x"
+           [style.top]="menuTopLeftPosition.y"
+           [matMenuTriggerFor]="file"></div>
+
+
+      <mat-menu #menu="matMenu">
+        <ng-template matMenuContent let-item="item">
+
+
+          <button mat-menu-item (click)="deleteSesion(item)">
+            <mat-icon>delete</mat-icon>
+            <span>Eliminar sesion</span>
+          </button>
+
+          <button mat-menu-item (click)="agregarFolder(item)">
+            <mat-icon>add</mat-icon>
+            <span>Agregar Folder</span>
+          </button>
+
+
+        </ng-template>
+      </mat-menu>
+
+
+      <mat-menu #agregar="matMenu"   >
+        <ng-template matMenuContent let-item="item"  >
+
+
+          <button (click)="agregarSesion(item)"  mat-menu-item (contextmenu)="focus($event)">
+            <mat-icon>add</mat-icon>
+            <span>Agregar Sesion</span>
+          </button>
+
+
+        </ng-template>
+      </mat-menu>
+
+
+      <mat-menu #folder="matMenu">
+        <ng-template matMenuContent let-item="item">
+
+
+          <button *ngIf="item.editable==true" mat-menu-item (click)="deleteFolder(item.id)">
+            <mat-icon>delete</mat-icon>
+            <span>Eliminar folder</span>
+          </button>
+
+
+
+          <button mat-menu-item (click)="agregarArchivo(item.id)">
+            <mat-icon>add</mat-icon>
+            <span>Subir Archivo</span>
+          </button>
+
+        </ng-template>
+      </mat-menu>
+
+      <mat-menu #file="matMenu">
+        <ng-template matMenuContent let-item="item">
+
+
+          <button mat-menu-item  (click)="deleteFile(item)">
+            <mat-icon>delete</mat-icon>
+            <span>Eliminar archivo</span>
+          </button>
+
+
+        </ng-template>
+      </mat-menu>
+
+
+
+    </mat-accordion>
+
+
+
+  </mat-card>
+
+
+
+
+
+</div>

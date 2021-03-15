@@ -1,0 +1,153 @@
+
+<div class="container-fluid">
+  <div class="row" style="width: 100%">
+    <div  [ngClass]="data.apoderados==undefined ? 'col-md-9' : 'col-md-4'">
+      <div class="card user-card">
+        <div class="card-header">
+          <h5>Mis Datos</h5>
+        </div>
+        <div class="card-block">
+          <div class="user-image">
+            <img src="{{data.profile.foto}}" class="img-radius" alt="User-Profile-Image">
+          </div>
+          <br><br><br>
+          <p class="text-muted">{{data.grado}}</p>
+          <br>
+          <hr>
+
+          <div class="col-md-12">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Nombre</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{data.profile.name}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Apellido</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{data.profile.lastName}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Email</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{data.profile.email}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Phone</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{data.profile.telefono}}
+                  </div>
+                </div>
+
+
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Address</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{data.profile.address}}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4"  *ngFor="let item of data.apoderados" [hidden]="data.apoderados==undefined">
+      <div class="card user-card" >
+        <div class="card-header">
+          <h5>Apoderados</h5>
+        </div>
+        <div class="card-block">
+          <br><br>
+          <div >
+            <mat-icon  class="img-radiuss" alt="User-Profile-Image">account_circle</mat-icon>
+          </div>
+          <br><br><br>
+          <p></p>
+
+          <hr>
+          <div class="col-md-12">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Nombre</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{item.name}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Apellido</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{item.lastName}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Email</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{item.email}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Phone</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{item.telefono}}
+                  </div>
+                </div>
+
+
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Address</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{item.address}}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

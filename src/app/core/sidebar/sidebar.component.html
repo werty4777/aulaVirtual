@@ -1,0 +1,47 @@
+<div class="wrap">
+  <div class="wrapper d-flex align-items-stretch">
+  <nav id="sidebar">
+    <div class="p-4 pt-5">
+      <a href="#" class="img logo rounded-circle mb-5"  [ngStyle]="{'background-image':getImage()}" ></a>
+      <div class="name" style="text-align: center"><span>{{this.data.nombre}}</span></div>
+      <br>
+      <ul class="list-unstyled components mb-5">
+        <li class="active">
+          <a [routerLink]="['/']" >Home</a>
+
+        </li>
+        <li>
+          <a  (click)="goprofile()" style="cursor: pointer">Mi informacion</a>
+        </li>
+        <li>
+          <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Cursos</a>
+          <ul class="collapse list-unstyled" id="pageSubmenu">
+            <li>
+              <a   (click)="go()" style="cursor: pointer" >Cursos Actuales</a>
+            </li>
+
+          </ul>
+        </li>
+        <li>
+          <a href="#">Finanzas</a>
+        </li>
+        <li>
+          <a href="#">Soporte tecnico</a>
+        </li>
+      </ul>
+
+
+      <div class="footer">
+        <img src="assets/images/log.png" width="200" height="80">
+      </div>
+
+
+    </div>
+  </nav>
+
+
+  <div id="content" class="p-4 p-md-5">
+  </div>
+</div></div>
+
+

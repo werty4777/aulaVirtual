@@ -1,0 +1,68 @@
+<div class="wrapsistencia">
+
+  <mat-form-field id="filtro">
+    <mat-label>Buscar Alumno</mat-label>
+    <input #input (keyup)="applyFilter($event)" matInput placeholder="">
+  </mat-form-field>
+
+  <form [formGroup]="dataGrouo" class="formularioAsitencia">
+
+    <table [dataSource]="dataSource" class="mat-elevation-z8" formArrayName="students" id="tablaalumnos" mat-table>
+
+
+      <ng-container matColumnDef="N0">
+        <th *matHeaderCellDef mat-header-cell> No.</th>
+        <td *matCellDef="let element  let rowindex=index " [formGroupName]="rowindex" mat-cell>
+
+          <input [value]="element.idStudent" formControlName="id" type="hidden">
+          {{rowindex+1}}
+        </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="alumno">
+        <th *matHeaderCellDef mat-header-cell> Alumno</th>
+        <td *matCellDef="let element let rowindex=index" mat-cell> {{element.nombreEstudiante}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="asistencia">
+        <th *matHeaderCellDef mat-header-cell> Asistencia </th>
+        <td *matCellDef="let element  let rowindex =index " [formGroupName]="rowindex" mat-cell>
+
+          <mat-form-field class="statusalumno">
+
+
+            <mat-label>Asistencia</mat-label>
+            <mat-select class="selectstatus" formControlName="asistencia">
+
+              <mat-option [value]="'ASISTIO'">ASISTIO</mat-option>
+              <mat-option [value]="'FALTO'">FALTO</mat-option>
+              <mat-option [value]="'TARDANZA'">TARDANZA</mat-option>
+
+            </mat-select>
+
+
+          </mat-form-field>
+
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+
+      <!--  <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>-->
+    </table>
+  </form>
+
+
+</div>
+
+<div class="boton">
+  <button (click)="guardarAsistencia()" mat-button class="botonsito">Guardar</button>
+</div>

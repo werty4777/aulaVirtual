@@ -1,0 +1,34 @@
+<div class="formulario">
+
+  <form  [formGroup]="_formGrupo">
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre de la sesion</mat-label>
+      <input formControlName="nombrefolder" type="text" matInput>
+      <mat-error *ngIf="this._formGrupo.controls.nombrefolder.invalid">{{''}}</mat-error>
+    </mat-form-field>
+
+  <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo folder</mat-label>
+      <mat-select [(ngModel)]="selectedValue" name="tipofolder"  formControlName="tipo">
+        <mat-option *ngFor="let tipo of _tipoFolder" [value]="tipo">
+          {{tipo}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+    <button [disabled]="this._formGrupo.controls.nombrefolder.invalid" mat-button (click)="crearFolder()" >Aceptar</button>
+
+
+
+
+  </form>
+
+
+
+
+</div>

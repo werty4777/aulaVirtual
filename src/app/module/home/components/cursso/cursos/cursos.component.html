@@ -1,0 +1,63 @@
+<div class="wrapcursos">
+
+  <div class="miscursos">
+    <mat-card>Mis Cursos</mat-card>
+
+  </div>
+
+  <div class="cursoswraper">
+
+    <div class="itemcursos" [ngStyle]="{'margin':margin}" *ngFor="let item of data" >
+
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image" style="background-image:url({{item.fotoProfesor}}) "></div>
+          <mat-card-title>{{item.curso}}
+
+            <span>{{item.miHorario }}</span>
+          </mat-card-title>
+          <mat-card-subtitle>{{item.profesor}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{item.fotoCurso}}" alt="">
+        <mat-card-content>
+
+          <div class="contentcourse">
+
+            <div class="spanwraper">
+              <div class="titlecourse">Alumnos</div>
+              <div class="numbercourse">{{item.alumnos}}</div>
+            </div>
+            <div class="spanwraper">
+              <div class="titlecourse">Grado</div>
+              <div class="numbercourse">{{item.grado}}</div>
+            </div>
+            <div class="spanwraper">
+              <div class="titlecourse">Turno</div>
+              <div class="numbercourse">{{item.turno}}</div>
+            </div>
+
+
+
+
+
+          </div>
+
+
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="ingresar(item.idCurso)">Ingresar</button>
+
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+</div>

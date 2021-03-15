@@ -1,0 +1,24 @@
+<div class="formulario">
+
+<form  [formGroup]="_formGrupo">
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre de la sesion</mat-label>
+    <input formControlName="sesionname" type="text" matInput>
+    <mat-error *ngIf="this._formGrupo.controls.sesionname.invalid">{{''}}</mat-error>
+  </mat-form-field>
+
+
+
+    <button [disabled]="this._formGrupo.controls.sesionname.invalid" mat-button (click)="crearSesion()" >Aceptar</button>
+
+
+
+
+</form>
+
+
+
+
+</div>
