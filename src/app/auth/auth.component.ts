@@ -40,7 +40,7 @@ export class AuthComponent implements OnInit {
 
     this.auth.authenticate(username, password).subscribe(value => {
 
-      this.cookieService.set("auth",value.token,0.02083,"/","aulavirtual-blush.vercel.app");
+      this.cookieService.set("auth",value.token,0.02083,"/","aulavirtualheroku.herokuapp.com");
 
       alert('logeado');
 
