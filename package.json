@@ -2,15 +2,19 @@
   "name": "aula-virtual",
   "version": "0.0.0",
   "scripts": {
+    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && ng serve -o"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~11.1.4",
+    "@angular/compiler-cli": "~11.1.2",
     "@angular-material-components/file-input": "^5.0.1",
     "@angular/animations": "~11.1.2",
     "@angular/cdk": "^11.1.2",
