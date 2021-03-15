@@ -11,15 +11,19 @@
     "e2e": "ng e2e",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && ng serve -o"
   },
+  "engines": {
+    "node": "12.13.1",
+    "npm": "6.12.1"
+  },
   "private": true,
   "dependencies": {
-    "@angular/cli": "~11.1.4",
-    "@angular/compiler-cli": "~11.1.2",
     "@angular-material-components/file-input": "^5.0.1",
     "@angular/animations": "~11.1.2",
     "@angular/cdk": "^11.1.2",
+    "@angular/cli": "~11.1.4",
     "@angular/common": "~11.1.2",
     "@angular/compiler": "~11.1.2",
+    "@angular/compiler-cli": "~11.1.2",
     "@angular/core": "~11.1.2",
     "@angular/forms": "~11.1.2",
     "@angular/material": "^11.1.2",
@@ -28,11 +32,14 @@
     "@angular/router": "~11.1.2",
     "@devoto13/angular-fontawesome": "^0.5.0-5",
     "@fortawesome/fontawesome-free": "^5.15.2",
+    "express": "^4.17.1",
     "file-saver": "^2.0.5",
     "material-design-icons": "^3.0.1",
     "ngx-cookie-service": "^11.0.2",
+    "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "typescript": "~4.1.2",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
